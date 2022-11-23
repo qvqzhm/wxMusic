@@ -1,0 +1,14 @@
+<!--component/playConponent.wxml-->
+<view class="box">
+  <view class="lf">
+    <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/%E8%AE%B8%E5%B5%A9__4.jpg" mode="widthFix" class="{{isplay?'active':''}}"></image>
+    <view>
+      在你身边
+    </view>
+  </view>
+  <view class="rh">
+    <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/zanting.png" mode="widthFix" wx:if="{{isplay}}" bindtap="topus" ></image>
+    <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/bofang.png" mode="widthFix" wx:else bindtap="topaly"></image>
+    <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/car.png" mode="widthFix"></image>
+  </view>
+</view>

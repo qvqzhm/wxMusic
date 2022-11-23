@@ -1,0 +1,20 @@
+
+var obj = {
+  playNum : function(num){
+    return (num/10000).toFixed(2)
+  },
+  
+  palyMin : function (time) {
+    return parseInt(time/60)
+  },
+
+  palySc : function (time) {
+    if (time%60 < 10) {
+      return '0'+time%60
+    }else{
+      return time%60
+    }
+  },
+}
+
+module.exports = obj

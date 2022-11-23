@@ -1,0 +1,140 @@
+<!--pages/music/music.wxml-->
+<wxs module="playNum" src="./play.wxs"></wxs>
+<view class="main">
+  <view class="search">
+    <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/musicsearch.png" mode="widthFix" class="searchimg"></image>
+    <text>搜索</text>
+  </view>
+
+  <view class="tuijian mb">
+    <view class="head_title">
+      <view class="typeName">歌曲推荐</view>
+      <view class="more" bindtap="gohot">
+        <text>更多</text>
+        <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/more.png" mode="widthFix" class="moic"></image>
+      </view>
+    </view>
+    <view class="tuijianlist" wx:for="{{randomMC}}" wx:key="index" bindtap="toplay" data-name="{{item.title}}" data-as="{{item.singer[0].name}}">
+      <image src="//y.qq.com/music/photo_new/T002R300x300M0000008IAML0V6eAM_1.jpg?max_age=2592000" class="tjimg" mode="widthFix"></image>
+      <view class="info">
+        <view class="songtitle">{{item.title}}</view>
+        <view class="songer">
+          <text >{{item.singer[0].name}}</text>
+          <text class="icon">·</text>
+          <text>{{item.album.name}}</text>
+        </view>
+      </view>
+      <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/more.png" mode="widthFix" class="moic"></image>
+    </view>
+  </view>
+
+  <view class="hotcar mb">
+    <view class="head_title">
+      <view class="typeName">热门歌单</view>
+      <view class="more" bindtap="gohotcar">
+        <text>更多</text>
+        <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/more.png" mode="widthFix" class="moic"></image>
+      </view>
+    </view>
+    <view class="carbox">
+      <scroll-view class="scv" scroll-x 	enable-flex>
+        <view class="scv_info" wx:for="{{hotCarList}}" wx:key="index">
+          <view class="pic">
+            <image src="{{item.Playlist.basic.cover.default_url}}" mode="widthFix"></image>
+            <view>
+              <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/202211051616775.png" mode="widthFix"></image>
+              {{playNum(item.Playlist.basic.play_cnt)}}万
+            </view>
+          </view>
+          <view class="infotitle">
+            {{item.Playlist.basic.title}}
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="hotcar mb">
+    <view class="head_title">
+      <view class="typeName">官方歌单</view>
+      <view class="more" bindtap="goocar">
+        <text>更多</text>
+        <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/more.png" mode="widthFix" class="moic"></image>
+      </view>
+    </view>
+    <view class="carbox">
+      <scroll-view class="scv" scroll-x enable-flex>
+        <view class="scv_info" wx:for="{{officialsList}}" wx:key="index">
+          <view class="pic">
+            <image src="{{item.cover_url_small}}" mode="widthFix"></image>
+            <view>
+              <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/202211051616775.png" mode="widthFix"></image>
+              {{playNum(item.access_num)}}万
+            </view>
+          </view>
+          <view class="infotitle">
+            {{item.title}}
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="bang mb">
+    <view class="head_title">
+      <view class="typeName">巅峰榜</view>
+    </view>
+
+    <view class="type" bindtap="goup">
+      <view class="left">
+        <view class="l_title">飙升榜</view>
+        <view class="sort" wx:for="{{upList}}" wx:key="index">
+          <text class="sort_num">{{index+1}}.</text>{{item.title}} <text class="aname">- {{item.singer[0].name}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <image src="{{upList[0].cover}}" mode="scaleToFill"></image>
+        <view class="bpic">
+            <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/202211051616775.png" mode="widthFix"></image>
+            {{playNum(upPlay)}}万
+        </view>
+      </view>
+    </view>
+
+    <view class="type" bindtap="gohot">
+      <view class="left">
+        <view class="l_title">热歌榜</view>
+        <view class="sort" wx:for="{{hotList}}" wx:key="index">
+          <text class="sort_num">{{index+1}}.</text>{{item.title}} <text class="aname">- {{item.singer[0].name}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <image src="{{hotList[0].cover}}" mode="scaleToFill"></image>
+        <view class="bpic">
+            <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/202211051616775.png" mode="widthFix"></image>
+            {{playNum(hotPlay)}}万
+        </view>
+      </view>
+    </view>
+
+    <view class="type" bindtap="gonew">
+      <view class="left">
+        <view class="l_title">新歌榜</view>
+        <view class="sort" wx:for="{{newList}}" wx:key="index">
+          <text class="sort_num">{{index+1}}.</text>{{item.title}} <text class="aname">- {{item.singer[0].name}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <image src="{{newList[0].cover}}" mode="scaleToFill"></image>
+        <view class="bpic">
+            <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/202211051616775.png" mode="widthFix"></image>
+            {{playNum(newPlay)}}万
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<play-component></play-component>
+
+

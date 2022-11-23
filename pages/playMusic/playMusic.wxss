@@ -1,0 +1,55 @@
+/* pages/playMusic/playMusic.wxss */
+page{
+  height: 100%;
+}
+.main{
+  width: 100%;
+  height: 100%;
+}
+.bg{
+  width: 100%;
+  height: 100%;
+  background-image: url('https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/%E8%AE%B8%E5%B5%A9__4.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  filter:  contrast(20%) blur(10rpx);
+  position: absolute;
+  z-index: -1;
+}
+.info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pic{
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.play{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.play image{
+  width: 90rpx;
+}
+.as{
+  width: 100%;
+  margin-bottom: 50rpx;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+.zj{
+  width: 50%;
+  border-radius: 30rpx;
+}
+.gc{
+  width: 100%;
+  text-align: center;
+  margin-top: 30rpx;
+  font-size: 18px;
+  color: white;
+}

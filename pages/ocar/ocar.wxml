@@ -1,0 +1,19 @@
+<!--pages/ocar/ocar.wxml-->
+<!--pages/hotcar/hotcar.wxml-->
+<wxs module="playNum" src="../music/play.wxs"></wxs>
+
+<view class="main">
+  <view class="list">
+    <view class="car" wx:for="{{ocarList}}" wx:key="index">
+    <view class="top">
+      <image src="{{item.cover_url_small}}" mode="widthFix" class="bg"></image>
+      <view>
+        <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/202211051616775.png" mode="widthFix"></image>
+        {{playNum(item.access_num)}}万
+      </view>
+    </view>
+      <view class="txt">{{item.title}}</view>
+    </view> 
+  </view>
+</view>
+

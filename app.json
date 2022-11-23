@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/music/music",
+    "pages/MV/MV",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/hotMusic/hotMusic",
+    "pages/upMusic/upMusic",
+    "pages/newMusic/newMusic",
+    "pages/hotcar/hotcar",
+    "pages/ocar/ocar",
+    "pages/playMusic/playMusic"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f7f7f7",
+    "navigationBarTitleText": "Music",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color":"white",
+    "selectedColor":"#1afa29",
+    "list": [
+      {
+        "pagePath":"pages/music/music",
+        "text":"音乐",
+        "iconPath": "./images/music.png",
+        "selectedIconPath": "./images/music_active.png"
+      },
+      {
+        "pagePath":"pages/MV/MV",
+        "text":"视频",
+        "iconPath":"./images/mv.png",
+        "selectedIconPath": "./images/mv_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "play-component":"/pages/component/playConponent"
+  }
+}

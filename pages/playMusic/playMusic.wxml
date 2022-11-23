@@ -1,0 +1,17 @@
+<!--pages/playMusic/playMusic.wxml-->
+<view class="main">
+  <view class="bg"></view>
+  <view class="info">
+    <view class="as">{{as}}</view>
+    <view class="pic">
+      <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/%E8%AE%B8%E5%B5%A9__4.jpg" class="zj" mode="widthFix"></image>
+      <view class="play" >
+        <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/pus.png" mode="widthFix" wx:if="{{play}}" bindtap="pus"></image>
+        <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/play.png" mode="widthFix" wx:else bindtap="play"></image>
+      </view>
+    </view>
+    <view class="gc">
+      gecx
+    </view>
+  </view>
+</view>

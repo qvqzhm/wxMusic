@@ -1,0 +1,46 @@
+/* component/playConponent.wxss */
+.box{
+  height: 80rpx;
+  background: white;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.lf{
+  display: flex;
+  align-items: center;
+}
+.lf image{
+  width: 88rpx;
+  border-radius: 50%;
+}
+.lf view{
+  margin-left: 24rpx;
+  font-size: 26rpx;
+}
+.rh{
+  align-items: center;
+  display: flex;
+}
+.rh image{
+  width: 60rpx;
+  border-radius: 50%;
+  margin-left: 20rpx;
+}
+.active{
+  animation: 8s zhuan forwards linear infinite;
+}
+@keyframes zhuan{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

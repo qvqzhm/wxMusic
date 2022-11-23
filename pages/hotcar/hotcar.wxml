@@ -1,0 +1,17 @@
+<!--pages/hotcar/hotcar.wxml-->
+<wxs module="playNum" src="../music/play.wxs"></wxs>
+
+<view class="main">
+  <view class="list">
+    <view class="car" wx:for="{{hotcarList}}" wx:key="index">
+    <view class="top">
+      <image src="{{item.Playlist.basic.cover.default_url}}" mode="widthFix" class="bg"></image>
+      <view>
+        <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/202211051616775.png" mode="widthFix"></image>
+        {{playNum(item.Playlist.basic.play_cnt)}}万
+      </view>
+    </view>
+      <view class="txt">{{item.Playlist.basic.title}}</view>
+    </view> 
+  </view>
+</view>

@@ -1,0 +1,26 @@
+/* pages/newMusic/newMusic.wxss */
+.main{
+  padding: 30rpx;
+  box-sizing: border-box;
+  background:#f7f7f7;
+}
+.bigtitle{
+  font-size: 18px;
+  font-weight: bold;
+}
+.list{
+  width: 100%;
+}
+.info{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.index{
+  font-size: 18px;
+  margin-right: 30rpx;
+}
+.zj{
+  font-size: 13px;
+  color: gray;
+}

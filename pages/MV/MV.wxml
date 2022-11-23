@@ -1,0 +1,68 @@
+<!--pages/MV/MV.wxml-->
+<wxs module="obj" src="./getNum.wxs"></wxs>
+<view class="page">
+
+<mp-tabs 
+  tabs="{{tabs}}" 
+  activeTab="{{activeTab}}" 
+  swiperClass="wc"
+  bindtabclick="onTabClick"
+  bindchange="onChange"
+  activeClass="acl"
+  tabClass="tc"
+  tab-background-color="#f7f7f7"
+>
+  <block wx:for="{{tabs}}" wx:key="title">
+      <view class="tab-content" slot="tab-content-{{index}}" >
+        <scroll-view class="tuijianview" 	scroll-y enable-flex 	
+        refresher-enabled
+        refresher-threshold
+        refresher-triggered="{{upShua}}"
+        bindrefresherrefresh="getnew"
+        bindscrolltolower="getmore"
+        >
+        <view wx:if="{{activeTab == 0}}" class="b">
+          <view class="tuijianList"  wx:for="{{mvTuiJianList}}" wx:key="index">
+            <view class="img">
+              <image src="{{item.picurl}}" mode="scaleToFill" class="big"></image>
+              <view class="img_info">
+                <view class="left">
+                  <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/202211051200863.png" mode="widthFix" class="ic"></image>
+                  <view class="playnum">{{obj.playNum(item.playcnt)}}万</view>
+                </view>
+                <view class="time"> 
+                  {{obj.palyMin(item.duration)}}:{{obj.palySc(item.duration)}}
+                </view>
+              </view>
+            </view>
+            <view class="txt">
+              {{item.title}}
+            </view>
+          </view>
+        </view>
+          
+        <view wx:else class="b">
+          <view class="tuijianList" wx:for="{{mvList}}" wx:key="index">
+            <view class="img">
+              <image src="{{item.picurl}}" mode="scaleToFill" class="big"></image>
+              <view class="img_info">
+                <view class="left">
+                  <image src="https://qvqzhm.oss-cn-guangzhou.aliyuncs.com/wxMusic/202211051200863.png" mode="widthFix" class="ic"></image>
+                  <view class="playnum">{{obj.playNum(item.playcnt)}}万</view>
+                </view>
+                <view class="time"> 
+                  {{obj.palyMin(item.duration)}}:{{obj.palySc(item.duration)}}
+                </view>
+              </view>
+            </view>
+            <view class="txt">
+              {{item.title}}
+            </view>
+          </view>
+        </view>
+          
+        </scroll-view>
+      </view>
+  </block>
+</mp-tabs>
+</view>

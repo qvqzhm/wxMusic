@@ -1,0 +1,5 @@
+
+var playNum = function(num){
+  return parseInt(num/10000)
+}
+module.exports = playNum

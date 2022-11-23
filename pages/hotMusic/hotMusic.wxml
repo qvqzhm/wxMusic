@@ -1,0 +1,14 @@
+<!--pages/hotMusic/hotMusic.wxml-->
+<view class="main">
+  <view class="bigtitle">热歌榜</view>
+
+  <view class="list">
+    <view class="info" wx:for="{{hotList}}" wx:key="index">
+      <view class="index">{{index+1}}</view>
+      <view>
+        <view>{{item.title}}</view>
+        <view class="zj">{{item.singer[0].name}} · {{item.album.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>
